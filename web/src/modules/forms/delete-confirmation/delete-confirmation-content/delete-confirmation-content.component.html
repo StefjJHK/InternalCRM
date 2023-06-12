@@ -1,0 +1,9 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+    <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+        <nz-space nzDirection="vertical" nzSize="middle">
+            <span *nzSpaceItem nz-typography>Enter '{{state.confirmationValue}}'</span>
+            <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.confirmationValue"
+                             [required]="true" [hideDisplayName]="true" placeholder="Enter value"></bip-input-field>
+        </nz-space>
+    </form>
+</bip-form-modal-content>

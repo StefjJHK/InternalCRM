@@ -1,0 +1,10 @@
+<bip-chart-widget [widgetState]="widgetState" [data]="chartSeries ? chartSeries[0] : []">
+  <bip-line-chart *ngIf="chartSeries" [legendData]="chartLegend!" [seriesData]="chartSeries"></bip-line-chart>
+  <bip-chart-widget-filter>
+    <nz-space nzDirection="vertical">
+      <bip-select-field *nzSpaceItem [bipFormControl]="formGroup.bipControls.product" [options]="productsSelectFieldOptions" [required]="true"></bip-select-field>
+      <bip-date-picker-field *nzSpaceItem [bipFormControl]="formGroup.bipControls.date" mode="year" [required]="true"></bip-date-picker-field>
+      <bip-select-field *nzSpaceItem [bipFormControl]="formGroup.bipControls.quarter" [options]="quarterSelectFieldOptions" [required]="true"></bip-select-field>
+    </nz-space>
+  </bip-chart-widget-filter>
+</bip-chart-widget>

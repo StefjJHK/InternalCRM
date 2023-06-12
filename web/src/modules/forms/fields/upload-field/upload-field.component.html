@@ -1,0 +1,24 @@
+<nz-form-item>
+  <ng-container *ngIf="bipFormControl.name && !hideDisplayName">
+    <nz-space>
+      <nz-form-label *nzSpaceItem [nzRequired]="required">{{ bipFormControl.name }} </nz-form-label>
+      <span *nzSpaceItem nz-icon nzType="info-circle"></span>
+    </nz-space>
+  </ng-container>
+  <nz-form-control
+    [nzValidateStatus]="bipFormControl.touched && !bipFormControl.valid ? 'error' : ''"
+    [nzErrorTip]=errorTip
+  >
+    <nz-upload [nzCustomRequest]="handleSet" [nzRemove]="handleRemove" [nzFileList]="files" [nzAccept]="accept">
+      <button nz-button nzBlock>
+        <span nz-icon nzType="upload"></span>
+        Click to Upload
+      </button>
+      <span nz-typography nzType="secondary">Allowed file formats: {{ acceptFormatsMessage }}</span>
+    </nz-upload>
+  </nz-form-control>
+</nz-form-item>
+
+<ng-template #errorTip>
+  <bip-field-error [bipFormControl]="bipFormControl"></bip-field-error>
+</ng-template>

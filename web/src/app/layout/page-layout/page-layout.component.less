@@ -1,0 +1,30 @@
+:host ::ng-deep {
+  display: flex;
+  flex-direction: column;
+
+  & > nz-layout > nz-content,
+  & > nz-layout > nz-content > nz-layout > nz-content,
+  & > nz-layout > nz-content > nz-layout > nz-content > :nth-child(2)
+  {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+bip-page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+nz-header {
+  display: flex;
+  align-items: center;
+  background: white;
+  box-shadow: inset 0 -1px 0 0 #F0F0F0;
+  height: auto;
+}
+
+
+

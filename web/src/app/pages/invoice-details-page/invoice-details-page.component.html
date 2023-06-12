@@ -1,0 +1,26 @@
+<bip-page [pageState]="pageState" [paddings]="false">
+    <bip-page-header *ngIf="invoice" [title]="invoice.number" [buttons]="headerButtons"></bip-page-header>
+    <bip-tabset>
+        <div *bipTabItem="'Info'">
+            <nz-descriptions *ngIf="invoice" nzTitle="Information" nzBordered nzLayout="vertical">
+                <nz-descriptions-item nzTitle="Amount">{{invoice.amount | currency}}</nz-descriptions-item>
+                <nz-descriptions-item
+                        nzTitle="Received date">{{invoice.receivedDate | date:'fullDate'}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Due date">{{invoice.dueDate | date:'fullDate'}}</nz-descriptions-item>
+                <nz-descriptions-item
+                        nzTitle="Paid">{{invoice.paidDate ? (invoice.paidDate | date:'fullDate') : '-'}}</nz-descriptions-item>
+            </nz-descriptions>
+            <nz-descriptions *ngIf="invoice" nzTitle="Customer" nzBordered nzLayout="vertical">
+                <nz-descriptions-item nzTitle="Customer name">{{invoice.customerName}}</nz-descriptions-item>
+            </nz-descriptions>
+            <nz-descriptions *ngIf="invoice" nzTitle="Product" nzBordered nzLayout="vertical">
+                <nz-descriptions-item nzTitle="Product name">{{invoice.productName}}</nz-descriptions-item>
+            </nz-descriptions>
+        </div>
+        <div *bipTabItem="'Subscriptions'">
+            <bip-subscriptions-table-widget *ngIf="invoice" [productName]="invoice.productName"
+                                            [customerName]="invoice.customerName"></bip-subscriptions-table-widget>
+        </div>
+    </bip-tabset>
+</bip-page>
+

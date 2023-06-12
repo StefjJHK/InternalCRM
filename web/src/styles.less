@@ -1,0 +1,67 @@
+@import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
+@import '../node_modules/ngx-spinner/animations/ball-scale-multiple.css';
+
+// override ant-design styles
+
+.ant-upload.ant-upload-select {
+  width: 100%;
+}
+
+.ant-descriptions-view {
+  background-color: white;
+}
+
+.ant-modal-body {
+  position: relative;
+}
+
+.ant-layout-header {
+  padding: 0 24px;
+}
+
+.ant-card {
+  display: flex;
+  flex-direction: column;
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    //card content selector
+    & > :nth-child(1) {
+      flex-grow: 1;
+    }
+  }
+}
+
+h2.ant-typography {
+  margin-bottom: 0;
+}
+
+nz-pagination {
+  padding-right: 8px !important;
+}
+
+// override echarts design
+
+div[echarts] {
+  height: 100% !important;
+}
+
+// page-layout
+
+body,
+bip-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+bip-layout,
+bip-page-layout {
+  flex-grow: 1;
+
+  & > :nth-child(2) {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,35 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Invoices"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="invoices"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Amount</th>
+        <th>Received date</th>
+        <th>Due date</th>
+        <th>Paid date</th>
+        <th>Purchase order</th>
+        <th>Product</th>
+        <th>Customer</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let invoice of invoices">
+        <td>{{invoice.number}}</td>
+        <td>{{invoice.amount | currency}}</td>
+        <td>{{invoice.receivedDate | date:'mediumDate'}}</td>
+        <td>{{invoice.dueDate | date:'mediumDate'}}</td>
+        <td>{{invoice.paidDate ? (invoice.paidDate | date:'mediumDate') : '-'}}</td>
+        <td>{{invoice.purchaseOrderNumber}}</td>
+        <td>{{invoice.productName}}</td>
+        <td>{{invoice.customerName}}</td>
+        <td>
+          <a [routerLink]="['/invoices', invoice.number]">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

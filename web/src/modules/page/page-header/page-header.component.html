@@ -1,0 +1,16 @@
+<nz-page-header>
+  <nz-page-header-title >
+    <nz-breadcrumb *ngIf="showBreadcrumb" [nzAutoGenerate]="true"></nz-breadcrumb>
+    <h4 *ngIf="title">{{title}}</h4>
+  </nz-page-header-title>
+  <nz-page-header-extra *ngIf="buttons">
+    <nz-space>
+      <ng-container *ngFor="let button of buttons">
+        <bip-button *nzSpaceItem [model]="button"></bip-button>
+      </ng-container>
+    </nz-space>
+  </nz-page-header-extra>
+  <nz-page-header-content *ngIf="content">
+    <ng-content select="bip-page-header-content"></ng-content>
+  </nz-page-header-content>
+</nz-page-header>

@@ -1,0 +1,35 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Leads"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="leads"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Cost</th>
+        <th>Product</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Contact name</th>
+        <th>Phone number</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let lead of leads">
+        <td>{{lead.name}}</td>
+        <td>{{lead.cost | currency}}</td>
+        <td>{{lead.productName}}</td>
+        <td>{{lead.startDate | date:'fullDate'}}</td>
+        <td>{{lead.endDate | date: 'fullDate'}}</td>
+        <td>{{lead.contactName}}</td>
+        <td>{{lead.phoneNumber}}</td>
+        <td>{{lead.email}}</td>
+        <td>
+          <a [routerLink]="['/leads', lead.name]">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

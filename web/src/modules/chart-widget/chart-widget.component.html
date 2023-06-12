@@ -1,0 +1,25 @@
+<bip-widget [widgetState]="widgetState" >
+  <bip-widget-header *ngIf="header" [title]="header.title"></bip-widget-header>
+  <div class="container">
+    <ng-container *ngIf="!filter" [ngTemplateOutlet]="chartContent"></ng-container>
+    <ng-container *ngIf="filter">
+      <div nz-row [nzGutter]="{ xs: 0, lg: 64 }">
+        <div nz-col [nzXs]="24" [nzLg]="16" [nzXl]="20">
+          <ng-container [ngTemplateOutlet]="chartContent"></ng-container>
+        </div>
+        <div nz-col [nzXs]="24" [nzLg]="8" [nzXl]="4">
+          <ng-content select="bip-chart-widget-filter"></ng-content>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</bip-widget>
+
+<ng-template #chartContent>
+  <ng-container *ngIf="data && data.length > 0">
+    <ng-content></ng-content>
+  </ng-container>
+  <ng-container *ngIf="!data || data.length == 0">
+    <nz-empty></nz-empty>
+  </ng-container>
+</ng-template>

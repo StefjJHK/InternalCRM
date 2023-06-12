@@ -1,0 +1,29 @@
+<bip-page [pageState]="pageState" [paddings]="false">
+    <bip-page-header *ngIf="customer" [title]="customer.name" [buttons]="headerButtons"></bip-page-header>
+    <bip-tabset>
+        <div *bipTabItem="'Info'">
+            <nz-descriptions *ngIf="customer" nzTitle="Contacts" nzBordered nzLayout="vertical">
+                <nz-descriptions-item nzTitle="Name">{{customer.name}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Contact name">{{customer.contactName}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Phone">{{customer.phoneNumber}}</nz-descriptions-item>
+                <nz-descriptions-item nzTitle="Email">{{customer.email}}</nz-descriptions-item>
+            </nz-descriptions>
+        </div>
+        <div *bipTabItem="'Products'">
+            <bip-products-table-widget *ngIf="customer" [customerName]="customer.name"></bip-products-table-widget>
+        </div>
+        <div *bipTabItem="'Purchase orders'">
+            <bip-purchase-orders-table-widget *ngIf="customer" [customerName]="customer.name"></bip-purchase-orders-table-widget>
+        </div>
+        <div *bipTabItem="'Invoices'">
+            <bip-invoices-table-widget *ngIf="customer" [customerName]="customer.name"></bip-invoices-table-widget>
+        </div>
+        <div *bipTabItem="'Subscriptions'">
+            <bip-subscriptions-table-widget *ngIf="customer" [customerName]="customer.name"></bip-subscriptions-table-widget>
+        </div>
+        <div *bipTabItem="'Payments'">
+            <bip-payments-table-widget *ngIf="customer" [customerName]="customer.name"></bip-payments-table-widget>
+        </div>
+    </bip-tabset>
+</bip-page>
+

@@ -1,0 +1,33 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Purchase Orders"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="purchaseOrders"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Amount</th>
+        <th>Received date</th>
+        <th>Due date</th>
+        <th>Paid date</th>
+        <th>Product</th>
+        <th>Customer</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let purchaseOrder of purchaseOrders">
+        <td>{{purchaseOrder.number}}</td>
+        <td>{{purchaseOrder.amount | currency}}</td>
+        <td>{{purchaseOrder.receivedDate | date:'fullDate'}}</td>
+        <td>{{purchaseOrder.dueDate | date:'fullDate'}}</td>
+        <td>{{purchaseOrder.paidDate ? (purchaseOrder.paidDate | date:'fullDate') : '-'}}</td>
+        <td>{{purchaseOrder.productName}}</td>
+        <td>{{purchaseOrder.customerName}}</td>
+        <td>
+          <a [routerLink]="['/purchase-orders', purchaseOrder.number]">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

@@ -1,0 +1,41 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-space nzDirection="vertical" >
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.username" [required]="true"></bip-input-field>
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.password" [required]="true"></bip-input-field>
+      <h5 *nzSpaceItem nz-typography>Permissions</h5>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.analyticsCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.analyticsCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.productCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.productCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.customerCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.customerCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.leadCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.leadCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.purchaseOrderCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.purchaseOrderCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.invoiceCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.invoiceCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.paymentCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.paymentCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="12">
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.subscriptionCanWrite" [options]="permissionRadioFieldOptions"></bip-radio-field>
+        <bip-radio-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.subscriptionCanRead" [options]="permissionRadioFieldOptions"></bip-radio-field>
+      </nz-row>
+    </nz-space>
+  </form>
+</bip-form-modal-content>

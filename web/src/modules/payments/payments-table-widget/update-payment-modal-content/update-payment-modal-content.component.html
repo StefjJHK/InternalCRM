@@ -1,0 +1,11 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-space nzDirection="vertical">
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.paymentNumber" [required]="true"></bip-input-field>
+      <nz-row *nzSpaceItem nzGutter="24">
+        <bip-input-field [bipFormControl]="state.formGroup.bipControls.amount" [required]="true" nz-col nzSpan="12"></bip-input-field>
+        <bip-date-picker-field [bipFormControl]="state.formGroup.bipControls.receivedDate" [required]="true" nz-col nzSpan="12"></bip-date-picker-field>
+      </nz-row>
+    </nz-space>
+  </form>
+</bip-form-modal-content>

@@ -1,0 +1,23 @@
+<bip-table-widget [widgetState]="widgetState">
+    <bip-table-widget-header title="Users"></bip-table-widget-header>
+    <ng-container>
+        <nz-table [nzData]="users ?? []" nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.username}}</td>
+                <td>{{user.email ?? '-'}}</td>
+                <td class="table-actions">
+                    <bip-button [model]="createDeleteAction(user)"></bip-button>
+                </td>
+            </tr>
+            </tbody>
+        </nz-table>
+    </ng-container>
+</bip-table-widget>

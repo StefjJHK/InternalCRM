@@ -1,0 +1,7 @@
+<nz-tabset [nzTabBarStyle]="{padding: '0 0 0 16px', background: 'white'}">
+    <nz-tab *ngFor="let tab of tabs" [nzTitle]="tab.bipTabItem" >
+        <ng-template nz-tab>
+            <ng-container [ngTemplateOutlet]="tab.templateRef"></ng-container>
+        </ng-template>
+    </nz-tab>
+</nz-tabset>

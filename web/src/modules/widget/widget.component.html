@@ -1,0 +1,24 @@
+<bip-card [disableBodyPaddings]="disableBodyPaddings">
+  <bip-card-header *ngIf="widgetHeader" [buttons]="widgetHeader.buttons">
+    {{widgetHeader.title}}
+  </bip-card-header>
+  <div class="widget-content">
+    <ng-container [ngSwitch]="widgetState">
+      <ng-template [ngSwitchCase]="WidgetState.loading">
+        <bip-loader [isVisible]="true"></bip-loader>
+      </ng-template>
+      <ng-template [ngSwitchCase]="WidgetState.loaded">
+        <ng-content></ng-content>
+      </ng-template>
+      <ng-template [ngSwitchCase]="WidgetState.error">
+        <nz-result
+          *ngIf="widgetState == 'error'"
+          nzTitle="Loading data error"
+          nzStatus="error"
+          nzSubTitle="Please try reload page"
+        >
+        </nz-result>
+      </ng-template>
+    </ng-container>
+  </div>
+</bip-card>

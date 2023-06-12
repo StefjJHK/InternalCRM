@@ -1,0 +1,21 @@
+<nz-form-item>
+  <nz-form-control
+    [nzValidateStatus]="bipFormControl.touched && !bipFormControl.valid ? 'error': ''"
+    [nzErrorTip]=errorTip
+  >
+    <nz-radio-group [ngModel]="bipFormControl.value" (ngModelChange)="bipFormControl.setValue($event)">
+      <div class="container">
+        <ng-container >
+          <nz-form-label *ngIf="bipFormControl.name && !hideDisplayName">{{ bipFormControl.name }}</nz-form-label>
+        </ng-container>
+        <div class="labels">
+          <label *ngFor="let option of options" nz-radio-button [nzValue]="option.value">{{option.label}}</label>
+        </div>
+      </div>
+    </nz-radio-group>
+  </nz-form-control>
+</nz-form-item>
+
+<ng-template #errorTip>
+  <bip-field-error [bipFormControl]="bipFormControl"></bip-field-error>
+</ng-template>

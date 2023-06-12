@@ -1,0 +1,18 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-space nzDirection="vertical">
+      <nz-row *nzSpaceItem nzGutter="24">
+        <bip-input-field [bipFormControl]="state.formGroup.bipControls.number" [required]="true" nz-col nzSpan="12"></bip-input-field>
+        <bip-input-field [bipFormControl]="state.formGroup.bipControls.amount" [required]="true" nz-col nzSpan="12"></bip-input-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="24">
+        <bip-date-picker-field [bipFormControl]="state.formGroup.bipControls.receivedDate" [required]="true" nz-col nzSpan="12"></bip-date-picker-field>
+        <bip-date-picker-field [bipFormControl]="state.formGroup.bipControls.dueDate" [required]="true" nz-col nzSpan="12"></bip-date-picker-field>
+      </nz-row>
+      <nz-row *nzSpaceItem nzGutter="24">
+        <bip-select-field [bipFormControl]="state.formGroup.bipControls.customerName" [options]="customerSelectOptions" [required]="true" nz-col nzSpan="12"></bip-select-field>
+        <bip-select-field [bipFormControl]="state.formGroup.bipControls.productName" [options]="productSelectOptions" [required]="true" nz-col nzSpan="12"></bip-select-field>
+      </nz-row>
+    </nz-space>
+  </form>
+</bip-form-modal-content>

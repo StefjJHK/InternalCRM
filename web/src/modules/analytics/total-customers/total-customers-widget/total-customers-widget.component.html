@@ -1,0 +1,6 @@
+<bip-chart-widget [widgetState]="widgetState" [data]="totalCustomers?.customers?.chartSeries">
+  <ng-container *ngIf="totalCustomers">
+    <nz-statistic [nzValue]="(totalCustomers.total | number)!" [nzTitle]="'Total customers'"></nz-statistic>
+    <bip-bar-chart [data]="totalCustomers.customers"></bip-bar-chart>
+  </ng-container>
+</bip-chart-widget>

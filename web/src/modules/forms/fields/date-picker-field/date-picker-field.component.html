@@ -1,0 +1,13 @@
+<nz-form-item>
+  <nz-form-label *ngIf="bipFormControl.name && !hideDisplayName" [nzRequired]="required">{{ bipFormControl.name }}</nz-form-label>
+  <nz-form-control
+    [nzValidateStatus]="bipFormControl.touched && !bipFormControl.valid ? 'error': ''"
+    [nzErrorTip]=errorTip
+  >
+    <nz-date-picker [(ngModel)]="date" [nzAllowClear]="!required" [nzShowTime]="showTime" [nzMode]="mode"></nz-date-picker>
+  </nz-form-control>
+</nz-form-item>
+
+<ng-template #errorTip>
+  <bip-field-error [bipFormControl]="bipFormControl"></bip-field-error>
+</ng-template>

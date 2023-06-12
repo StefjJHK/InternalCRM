@@ -1,0 +1,15 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-space nzDirection="vertical">
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.name" [required]="true"></bip-input-field>
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.cost" [required]="true"></bip-input-field>
+      <bip-date-range-picker-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.dateRange" [required]="true"></bip-date-range-picker-field>
+      <h5 *nzSpaceItem nz-typography>Contact Details</h5>
+      <nz-row *nzSpaceItem nzGutter="24">
+        <bip-input-field nz-col nzSpan="8" [bipFormControl]="state.formGroup.bipControls.contactName" [required]="true"></bip-input-field>
+        <bip-input-field nz-col nzSpan="8" [bipFormControl]="state.formGroup.bipControls.phone" placeholder="+375 11 222-33-44" [required]="true"></bip-input-field>
+        <bip-input-field nz-col nzSpan="8" [bipFormControl]="state.formGroup.bipControls.email" placeholder="example@gmail.ru" [required]="true"></bip-input-field>
+      </nz-row>
+    </nz-space>
+  </form>
+</bip-form-modal-content>

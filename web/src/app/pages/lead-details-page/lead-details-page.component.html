@@ -1,0 +1,20 @@
+<bip-page [pageState]="pageState" [paddings]="false">
+  <bip-page-header *ngIf="lead" [title]="lead.name" [buttons]="headerButtons"></bip-page-header>
+  <bip-tabset>
+    <div *bipTabItem="'Info'">
+      <nz-descriptions *ngIf="lead" nzTitle="Contacts" nzBordered nzLayout="vertical">
+        <nz-descriptions-item nzTitle="Name">{{lead.name}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Contact name">{{lead.contactName}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Phone">{{lead.phoneNumber}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Email">{{lead.email}}</nz-descriptions-item>
+      </nz-descriptions>
+      <nz-descriptions *ngIf="lead" nzTitle="Product details" nzBordered nzLayout="vertical">
+        <nz-descriptions-item nzTitle="Product name">{{lead.productName}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Name">{{lead.cost | currency}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Name">{{lead.startDate | date:'fullDate'}}</nz-descriptions-item>
+        <nz-descriptions-item nzTitle="Name">{{lead.endDate | date:'fullDate'}}</nz-descriptions-item>
+      </nz-descriptions>
+    </div>
+  </bip-tabset>
+</bip-page>
+

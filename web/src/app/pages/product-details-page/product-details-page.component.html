@@ -1,0 +1,12 @@
+<bip-page [pageState]="pageState" [paddings]="false">
+    <bip-page-header *ngIf="product" [title]="product.name" [buttons]="headerButtons"></bip-page-header>
+    <bip-tabset>
+        <div *bipTabItem="'Customers'">
+            <bip-product-customers-widget *ngIf="product" [productName]="product.name"></bip-product-customers-widget>
+        </div>
+        <div *bipTabItem="'Subscriptions'">
+            <bip-subscriptions-table-widget *ngIf="product" [productName]="product.name"></bip-subscriptions-table-widget>
+        </div>
+    </bip-tabset>
+</bip-page>
+

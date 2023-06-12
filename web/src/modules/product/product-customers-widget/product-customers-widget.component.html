@@ -1,0 +1,23 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Customers"></bip-table-widget-header>
+  <nz-table [nzData]="productCustomers ?? []" nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total purchase orders</th>
+      <th>Total invoices</th>
+      <th>Total subscriptions</th>
+      <th>Total revenue</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let productCustomer of productCustomers">
+      <td>{{productCustomer.customerName}}</td>
+      <td>{{productCustomer.totalPurchaseOrders | number}}</td>
+      <td>{{productCustomer.totalInvoices | number}}</td>
+      <td>{{productCustomer.totalSubscriptions | number}}</td>
+      <td>{{productCustomer.totalRevenue | number}}</td>
+    </tr>
+    </tbody>
+  </nz-table>
+</bip-table-widget>

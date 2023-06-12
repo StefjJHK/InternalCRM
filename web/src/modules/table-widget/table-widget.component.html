@@ -1,0 +1,6 @@
+<bip-widget [widgetState]="widgetState" [disableBodyPaddings]="true">
+  <bip-widget-header *ngIf="tableWidgetHeader" [title]="tableWidgetHeader.title" [buttons]="tableWidgetHeader.buttons">
+    <ng-content select="bip-table-widget-header"></ng-content>
+  </bip-widget-header>
+  <ng-content></ng-content>
+</bip-widget>

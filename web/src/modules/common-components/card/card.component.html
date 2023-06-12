@@ -1,0 +1,15 @@
+<nz-card [nzBodyStyle]="cardBodyStyles" [nzTitle]="cardHeader ? cardTitleTemplate :  undefined" [nzExtra]="cardHeader ?  cardExtraTemplate :  undefined">
+  <ng-content></ng-content>
+</nz-card>
+
+<ng-template #cardTitleTemplate>
+  <ng-content select="bip-card-header"></ng-content>
+</ng-template>
+
+<ng-template #cardExtraTemplate>
+  <nz-space *ngIf="cardHeader">
+    <ng-container *ngFor="let button of cardHeader.buttons">
+      <bip-button *nzSpaceItem [model]="button"></bip-button>
+    </ng-container>
+  </nz-space>
+</ng-template>

@@ -1,0 +1,21 @@
+<nz-form-item>
+  <nz-form-label *ngIf="bipFormControl.name && !hideDisplayName" [nzRequired]="required">{{ bipFormControl.name }}</nz-form-label>
+  <nz-form-control
+    [nzValidateStatus]="bipFormControl.touched && !bipFormControl.valid ? 'error': ''"
+    [nzErrorTip]="errorTip"
+  >
+    <nz-input-group [nzPrefix]="icon ? prefixTemplate :  undefined" >
+      <input nz-input [type]="type" [formControl]="bipFormControl" [placeholder]="placeholder" />
+    </nz-input-group>
+  </nz-form-control>
+</nz-form-item>
+
+
+<ng-template #prefixTemplate>
+  <span nz-icon [nzType]="icon!"></span>
+</ng-template>
+
+<ng-template #errorTip>
+  <bip-field-error [bipFormControl]="bipFormControl"></bip-field-error>
+</ng-template>
+

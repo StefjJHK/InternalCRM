@@ -1,0 +1,28 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Payments"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="payments"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Amount</th>
+        <th>Invoice</th>
+        <th>Received date</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let payment of payments">
+        <td>{{payment.number}}</td>
+        <td>{{payment.amount | currency}}</td>
+        <td>{{payment.invoiceNumber}}</td>
+        <td>{{payment.receivedDate | date:'mediumDate'}}</td>
+        <td class="table-actions">
+          <bip-button [model]="createUpdateAction(payment)"></bip-button>
+          <bip-button [model]="createDeleteAction(payment)"></bip-button>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

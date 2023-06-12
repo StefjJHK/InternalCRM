@@ -1,0 +1,17 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Products"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="products ?? []"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

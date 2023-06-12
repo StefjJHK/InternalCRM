@@ -1,0 +1,11 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-row nzGutter="24">
+      <bip-input-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.name" [required]="true"></bip-input-field>
+      <bip-upload-field nz-col nzSpan="12" [bipFormControl]="state.formGroup.bipControls.icon" accept=".jpg, .png"></bip-upload-field>
+    </nz-row>
+    <h5 nz-typography>IntelliLock</h5>
+    <bip-upload-field [bipFormControl]="state.formGroup.bipControls.project" accept=".ilproj"></bip-upload-field>
+    <nz-divider nzDashed></nz-divider>
+  </form>
+</bip-form-modal-content>

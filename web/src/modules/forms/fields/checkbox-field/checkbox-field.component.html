@@ -1,0 +1,12 @@
+<nz-form-item>
+  <nz-form-control
+    [nzValidateStatus]="bipFormControl.touched && !bipFormControl.valid ? 'error': ''"
+    [nzErrorTip]=errorTip
+  >
+    <label nz-checkbox [(nzChecked)]="isChecked">{{bipFormControl.name}}</label>
+  </nz-form-control>
+</nz-form-item>
+
+<ng-template #errorTip>
+  <bip-field-error [bipFormControl]="bipFormControl"></bip-field-error>
+</ng-template>

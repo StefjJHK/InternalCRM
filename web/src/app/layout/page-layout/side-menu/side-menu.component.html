@@ -1,0 +1,70 @@
+<ul nz-menu nzMode="inline">
+  <div>
+    <li *bipIfPermissions="permissionsFrom({'analytics': {'canRead': true}})" nz-menu-item nzMatchRouter>
+      <span nz-icon nzType="pie-chart"></span>
+      <span>
+        <a [routerLink]="[routes.Dashboard]">Dashboard</a>
+      </span>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-submenu nzTitle="Billings" nzIcon="solution">
+      <ul>
+        <li *bipIfPermissions="permissionsFrom({'invoice': {'canRead': true}})" nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Invoices]">Invoices</a>
+        </li>
+        <li *bipIfPermissions="permissionsFrom({'payment': {'canRead': true}})" nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Payments]">Payments</a>
+        </li>
+        <li *bipIfPermissions="permissionsFrom({'subscription': {'canRead': true}})" nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Subscriptions]">Subscriptions</a>
+        </li>
+      </ul>
+    </li>
+    <li *bipIfPermissions="permissionsFrom({'purchaseOrder': {'canRead': true}})" nz-menu-item nzMatchRouter>
+      <span nz-icon nzType="file-text"></span>
+      <span>
+        <a [routerLink]="[routes.PurchaseOrders]">Purchase Orders</a>
+      </span>
+    </li>
+    <li nz-submenu nzTitle="Clientele" nzIcon="team">
+      <ul>
+        <li *bipIfPermissions="permissionsFrom({'customer': {'canRead': true}})" nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Customers]">Customers</a>
+        </li>
+        <li *bipIfPermissions="permissionsFrom({'lead': {'canRead': true}})" nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Leads]">Leads</a>
+        </li>
+      </ul>
+    </li>
+    <li *bipIfPermissions="permissionsFrom({'product': {'canRead': true}})" nz-menu-item nzMatchRouter>
+      <span nz-icon nzType="appstore"></span>
+      <span>
+        <a [routerLink]="[routes.Products]">Products</a>
+      </span>
+    </li>
+<!--    <li nz-menu-divider></li>
+    <li nz-submenu nzTitle="Shopify">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="[routes.Shopify.Orders]">Orders</a>
+        </li>
+      </ul>
+    </li>-->
+  </div>
+  <div class="bip-menu-adjuster--height"></div>
+  <div>
+    <li nz-menu-divider></li>
+    <li nz-menu-item nzMatchRouter>
+      <span nz-icon nzType="setting"></span>
+      <span>
+        <a [routerLink]="[routes.Admin]">Admin</a>
+      </span>
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <span nz-icon nzType="logout"></span>
+      <span>
+        <a [routerLink]="[routes.Logout]">Logout</a>
+      </span>
+    </li>
+  </div>
+</ul>

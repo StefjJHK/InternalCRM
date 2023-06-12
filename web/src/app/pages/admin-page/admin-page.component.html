@@ -1,0 +1,5 @@
+<bip-page [pageState]="pageState">
+    <bip-page-header *ngIf="user" [title]="'Have a nice day, ' + user.username + '!'" [buttons]="headerButtons"></bip-page-header>
+    <bip-users-table-widget></bip-users-table-widget>
+</bip-page>
+

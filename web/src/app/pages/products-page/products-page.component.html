@@ -1,0 +1,17 @@
+<bip-page [pageState]="pageState" [paddings]="true">
+  <bip-page-header title="Products" [buttons]="headerButtons"></bip-page-header>
+  <div nz-row [nzGutter]="[16, 16]">
+    <bip-card nz-col [nzXs]="24" [nzMd]="12" [nzLg]="8" [nzXXl]="6" *ngFor="let productCard of productCards">
+      <bip-card-header>
+        <nz-row nzJustify="space-between">
+          <span>{{ productCard.title }}</span>
+          <button nz-button nzType="link" (click)="onProductDetailsClick(productCard.productName)">Details</button>
+        </nz-row>
+      </bip-card-header>
+      <nz-row nzGutter="8">
+        <nz-statistic nz-col nzSpan="12" nzTitle="Total customers" [nzValue]="(productCard.totalCustomers | number)!"></nz-statistic>
+        <nz-statistic nz-col nzSpan="12" nzTitle="Total subscriptions" [nzValue]="(productCard.totalSubscriptions | number)!"></nz-statistic>
+      </nz-row>
+    </bip-card>
+  </div>
+</bip-page>

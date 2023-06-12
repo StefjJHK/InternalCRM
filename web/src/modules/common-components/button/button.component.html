@@ -1,0 +1,5 @@
+<button nz-button [nzType]="model.type === 'danger' ? 'default' : model.type" [nzDanger]="model.type === 'danger'"
+        (click)="onClick()">
+    <span *ngIf="model.icon" nz-icon [nzType]="model.icon"></span>
+    <span>{{model.text}}</span>
+</button>

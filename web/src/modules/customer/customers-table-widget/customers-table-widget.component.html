@@ -1,0 +1,27 @@
+<bip-table-widget [widgetState]="widgetState">
+  <bip-table-widget-header title="Customers"></bip-table-widget-header>
+  <ng-container>
+    <nz-table [nzData]="customers"  nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contact name</th>
+        <th>Phone number</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.name}}</td>
+        <td>{{customer.contactName}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.email}}</td>
+        <td>
+          <a [routerLink]="['/customers', customer.name]">Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</bip-table-widget>

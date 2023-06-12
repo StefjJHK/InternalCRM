@@ -1,0 +1,6 @@
+<bip-chart-widget [widgetState]="widgetState" [data]="totalSales?.sales?.chartSeries">
+  <ng-container *ngIf="totalSales">
+    <nz-statistic [nzValue]="(totalSales.total | currency:'USD')!" [nzTitle]="'Total sales'"></nz-statistic>
+    <bip-area-chart [data]="totalSales.sales"></bip-area-chart>
+  </ng-container>
+</bip-chart-widget>

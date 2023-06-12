@@ -1,0 +1,20 @@
+<ng-content select="bip-page-header"></ng-content>
+<div class="page-content" [class.page-content__paddings]="paddings">
+  <ng-container [ngSwitch]="pageState">
+    <ng-template [ngSwitchCase]="PageState.loading">
+      <bip-loader [isVisible]="true"></bip-loader>
+    </ng-template>
+    <ng-template [ngSwitchCase]="PageState.loaded">
+      <ng-content></ng-content>
+    </ng-template>
+    <ng-template [ngSwitchCase]="PageState.error">
+      <nz-result
+        *ngIf="pageState == 'error'"
+        nzTitle="Loading data error"
+        nzStatus="error"
+        nzSubTitle="Please try reload page"
+      >
+      </nz-result>
+    </ng-template>
+  </ng-container>
+<div>

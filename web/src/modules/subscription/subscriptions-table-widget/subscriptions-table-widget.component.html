@@ -1,0 +1,27 @@
+<bip-table-widget [widgetState]="widgetState">
+    <bip-table-widget-header title="Subscriptions"></bip-table-widget-header>
+    <ng-container>
+        <nz-table [nzData]="productSubscriptions ?? []" nzTableLayout="fixed" [nzFrontPagination]="false" [nzShowPagination]="false">
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Sub legal</th>
+                <th>Cost</th>
+                <th>Is paid</th>
+                <th>Valid from</th>
+                <th>Valid until</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let subscription of productSubscriptions">
+                <td>{{subscription.number}}</td>
+                <td>{{subscription.subLegalEntity}}</td>
+                <td>{{subscription.cost | currency}}</td>
+                <td>{{subscription.isPaid ? 'YES' : 'NO'}}</td>
+                <td>{{subscription.validFrom | date:'fullDate'}}</td>
+                <td>{{subscription.validUntil | date:'fullDate'}}</td>
+            </tr>
+            </tbody>
+        </nz-table>
+    </ng-container>
+</bip-table-widget>

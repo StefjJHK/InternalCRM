@@ -1,0 +1,5 @@
+<nz-space nzDirection="vertical" *ngIf="bipFormControl.invalid && (bipFormControl.touched || bipFormControl.dirty) && bipFormControl.errors">
+  <li *ngFor="let error of bipFormControl.getErrors()">
+    {{error}}
+  </li>
+</nz-space>

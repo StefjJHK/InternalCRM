@@ -1,0 +1,10 @@
+<ng-container *ngIf="formState == FormState.Filling || formState == FormState.Submitting">
+  <ng-content></ng-content>
+</ng-container>
+<nz-result *ngIf="formState == FormState.Error"
+  nzTitle="Loading data error"
+  nzStatus="error"
+  nzSubTitle="Please try reload form"
+>
+</nz-result>
+<bip-loader [isVisible]="formState == FormState.Loading || formState == FormState.Submitting"></bip-loader>

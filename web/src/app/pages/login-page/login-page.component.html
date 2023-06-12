@@ -1,0 +1,17 @@
+<div nz-row nzJustify="center">
+  <bip-card>
+    <bip-card-header>
+      <!--suppress RequiredAttributes -->
+      <img nz-image nzSrc="assets/images/bip_logo.webp" width="40px" height="40px" alt="Bureau Of Innovative Projects Logotype"/>
+      <h2 nz-typography>Internal CRM</h2>
+    </bip-card-header>
+    <form [formGroup]="formGroup" nz-space nzDirection="vertical">
+      <bip-input-field *nzSpaceItem [bipFormControl]="formGroup.bipControls.login" placeholder="Username" [required]="true" [hideDisplayName]="true" icon="user"></bip-input-field>
+      <bip-input-field *nzSpaceItem [bipFormControl]="formGroup.bipControls.password" placeholder="Password" [required]="true" [hideDisplayName]="true" type="password" icon="lock"></bip-input-field>
+      <ng-container *ngIf="errorMessage">
+        <span *nzSpaceItem nz-typography nzType="danger">{{errorMessage}}</span>
+      </ng-container>
+      <bip-button *nzSpaceItem [model]="loginButton"></bip-button>
+    </form>
+  </bip-card>
+</div>

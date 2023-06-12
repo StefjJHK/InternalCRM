@@ -1,0 +1,10 @@
+<bip-form-modal-content [formState]="state.formState$ | async">
+  <form nz-form nzLayout="vertical" [formGroup]="state.formGroup">
+    <nz-space nzDirection="vertical">
+      <bip-select-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.invoiceNumber" [options]="invoiceSelectOptions" [required]="true"></bip-select-field>
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.cost" [required]="true"></bip-input-field>
+      <bip-date-range-picker-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.dateRange" [required]="true"></bip-date-range-picker-field>
+      <bip-input-field *nzSpaceItem [bipFormControl]="state.formGroup.bipControls.subLegalEntity" [required]="true"></bip-input-field>
+    </nz-space>
+  </form>
+</bip-form-modal-content>
