@@ -78,11 +78,8 @@ var app = builder.Build();
 app.UseProblemDetails();
 app.UseCorrelationId();
 
-if (env.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseRouting();
 

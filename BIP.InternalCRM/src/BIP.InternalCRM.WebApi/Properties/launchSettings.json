@@ -1,4 +1,25 @@
-﻿{
+{
+  "profiles": {
+    "Kestrel (Development)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:49002"
+    },
+    "IIS Express (Developement)": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true
+    }
+  },
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -6,22 +27,6 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:49002",
       "sslPort": 0
-    }
-  },
-  "profiles": {
-    "Kestrel (Development)": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:49002",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "IIS Express (Developement)": {
-      "commandName": "IISExpress",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     }
   }
 }
